@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(48, 16, 255, 1) 0%,
+    rgba(100, 115, 255, 1) 100%
+  );
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  background: #161a2b;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+  color: aliceblue;
+}
+
+h1 {
+  margin: 32px 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.dropdown-button {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border: outset rgb(249, 180, 180);
+  border-radius: 10%;
+  font-size: 26px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dropdown:nth-child(4n + 1) {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+}
+
+.dropdown:nth-child(4n + 2) {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 12, 241, 1) 0%,
+    rgba(250, 0, 135, 1) 100%
+  );
+}
+
+.dropdown:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.completion-icon {
+  color: #fff;
+}
+
+.showtasklist-button {
+	display: inline-block;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+	min-width: 80px;
+  width: 75%;
+	padding: 16px 24px;
+	font-family: 'Lobster', cursive;
+	font-size: 20px;
+	line-height: 20px;
+	text-decoration: none;
+	color: #FFF;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+	background: #5e0d0c;
+	outline: none;
+	border-radius: 15px;
+	border: 1px solid #4c0300;
+	box-shadow:
+		inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+		inset 0 0 6px #a23227, /* inner glow */
+		inset 0 80px 80px -40px #ac3223, /* gradient */
+		1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+		
+	position: relative;
+	overflow: visible; /* IE9 & 10 */
+	-webkit-transition: 500ms linear;
+	   -moz-transition: 500ms linear;
+	     -o-transition: 500ms linear;
+					transition: 500ms linear;
+}
+
+.Page-block {
+  list-style-type: none;
+  margin: 0;
+  padding: 2px;
+  display: inline;
+}
+
+.Page-link {
+  padding: 5px 6px;
+  font-size: 20px;
+  border: 1px solid #4c0300;
+  width: 5%;
+  box-shadow:
+    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+    inset 0 0 6px #a23227, /* inner glow */
+    inset 0 80px 80px -40px #ac3223, /* gradient */
+    1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+}
+
+.Routes-NavBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.Route-Block {
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  display: block;
+  background-color: #5e0d0c;
+}
+
+.Route-Block a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.Logout-Button {
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  /* padding: 10px; */
+  display: block;
+  background-color: #5e0d0c;  
+
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  border: transparent;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.Logout-Button:hover {
+  background-color: #5e0d0c;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #bdbdbd;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #bdbdbd;
+}
+
+button {
+  width: 25%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 8px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #037308;
+}

@@ -3,14 +3,21 @@ import {
 } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import './App.css';
+<<<<<<< HEAD
 import Popup from 'reactjs-popup';
+=======
+>>>>>>> a84d5e0 (COMMIT HINA)
 
 import Login from './components/auth/login';
 // import settings from './components/auth/settings';
 import Signup from './components/auth/signup';
 // import Loginmaster from './components/auth/loginmaster';
 
+<<<<<<< HEAD
 // import Completedtasks from './components/consumer/completedtasks';
+=======
+import Completedtasks from './components/consumer/completedtasks';
+>>>>>>> a84d5e0 (COMMIT HINA)
 import Tasklist from './components/consumer/tasklist';
 import User from './components/consumer/user';
 // import useToken from './components/consumer/useToken';
@@ -31,6 +38,7 @@ function App() {
         return targetUser || '';
     });
 
+<<<<<<< HEAD
     const handleLogout = () => {
         // localStorage.clear();
         setToken('');
@@ -43,6 +51,10 @@ function App() {
             </Popup>
         );
     };
+=======
+    // const [token, setToken] = useState('');
+    // const [user, setUser] = useState('');
+>>>>>>> a84d5e0 (COMMIT HINA)
 
     console.log(token, user);
 
@@ -66,6 +78,7 @@ function App() {
 
     if (!token) {
         return (
+<<<<<<< HEAD
             <div className="App">
                 {/* <Login setToken={setToken} setUser={setUser} /> */}
                 <BrowserRouter>
@@ -77,6 +90,11 @@ function App() {
                             </ul>
                         </nav>
                     </div>
+=======
+            <div>
+                <Login setToken={setToken} setUser={setUser} />
+                <BrowserRouter>
+>>>>>>> a84d5e0 (COMMIT HINA)
                     <Routes>
                         <Route path="/login" element={<Login setToken={setToken} setUser={setUser} />} />
                         <Route path="/signup" element={<Signup setToken={setToken} setUser={setUser} />} />
@@ -89,6 +107,7 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
+<<<<<<< HEAD
                 <div className="Routes-NavBar">
                     <nav>
                         <ul>
@@ -104,13 +123,26 @@ function App() {
                         </ul>
                     </nav>
                 </div>
+=======
+                <nav>
+                    <ul>
+                        <li><Link to="/">Submit task</Link></li>
+                        <li><Link to="/tasklist">Tasklist</Link></li>
+                        <li><Link to="/completedtasks">Completed tasks</Link></li>
+                    </ul>
+                </nav>
+>>>>>>> a84d5e0 (COMMIT HINA)
                 <Routes>
                     <Route path="/login" element={<Login setToken={setToken} setUser={setUser} />} />
                     <Route path="/signup" element={<Signup setToken={setToken} setUser={setUser} />} />
                     <Route path="/" element={<User userid={user} />} />
                     <Route path="/user" element={<User userid={user} />} />
                     <Route path="/tasklist" element={<Tasklist userid={user} />} />
+<<<<<<< HEAD
                     {/* <Route path="/completedtasks" element={<Completedtasks />} /> */}
+=======
+                    <Route path="/completedtasks" element={<Completedtasks />} />
+>>>>>>> a84d5e0 (COMMIT HINA)
                 </Routes>
             </BrowserRouter>
         </div>

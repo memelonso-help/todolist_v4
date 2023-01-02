@@ -3,13 +3,14 @@ import {
 } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import Popup from 'reactjs-popup';
 
 import Login from './components/auth/login';
 // import settings from './components/auth/settings';
 import Signup from './components/auth/signup';
 // import Loginmaster from './components/auth/loginmaster';
 
-import Completedtasks from './components/consumer/completedtasks';
+// import Completedtasks from './components/consumer/completedtasks';
 import Tasklist from './components/consumer/tasklist';
 import User from './components/consumer/user';
 // import useToken from './components/consumer/useToken';
@@ -30,8 +31,18 @@ function App() {
         return targetUser || '';
     });
 
-    // const [token, setToken] = useState('');
-    // const [user, setUser] = useState('');
+    const handleLogout = () => {
+        // localStorage.clear();
+        setToken('');
+        setUser('');
+        return (
+            <Popup>
+                <div className="Popup-Logout-Message">
+                    You have logged out successfully.
+                </div>
+            </Popup>
+        );
+    };
 
     console.log(token, user);
 
@@ -55,9 +66,17 @@ function App() {
 
     if (!token) {
         return (
-            <div>
-                <Login setToken={setToken} setUser={setUser} />
+            <div className="App">
+                {/* <Login setToken={setToken} setUser={setUser} /> */}
                 <BrowserRouter>
+                    <div className="Routes-NavBar">
+                        <nav>
+                            <ul>
+                                <li className="Route-Block"><Link to="/login">Login</Link></li>
+                                <li className="Route-Block"><Link to="/signup">Signup</Link></li>
+                            </ul>
+                        </nav>
+                    </div>
                     <Routes>
                         <Route path="/login" element={<Login setToken={setToken} setUser={setUser} />} />
                         <Route path="/signup" element={<Signup setToken={setToken} setUser={setUser} />} />
@@ -70,20 +89,28 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <nav>
-                    <ul>
-                        <li><Link to="/">Submit task</Link></li>
-                        <li><Link to="/tasklist">Tasklist</Link></li>
-                        <li><Link to="/completedtasks">Completed tasks</Link></li>
-                    </ul>
-                </nav>
+                <div className="Routes-NavBar">
+                    <nav>
+                        <ul>
+                            <li className="Route-Block"><Link to="/">Submit task</Link></li>
+                            <li className="Route-Block"><Link to="/tasklist">Tasklist</Link></li>
+                            <li className="Route-Block"><Link to="/login">Login</Link></li>
+                            <li className="Route-Block">
+                                <button type="button" onClick={handleLogout} className="Logout-Button">
+                                    Logout
+                                </button>
+                            </li>
+                            {/* <li><Link to="/completedtasks">Completed tasks</Link></li> */}
+                        </ul>
+                    </nav>
+                </div>
                 <Routes>
                     <Route path="/login" element={<Login setToken={setToken} setUser={setUser} />} />
                     <Route path="/signup" element={<Signup setToken={setToken} setUser={setUser} />} />
                     <Route path="/" element={<User userid={user} />} />
                     <Route path="/user" element={<User userid={user} />} />
                     <Route path="/tasklist" element={<Tasklist userid={user} />} />
-                    <Route path="/completedtasks" element={<Completedtasks />} />
+                    {/* <Route path="/completedtasks" element={<Completedtasks />} /> */}
                 </Routes>
             </BrowserRouter>
         </div>

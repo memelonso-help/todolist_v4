@@ -14,6 +14,6 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-app.config["JWT_SECRET_KEY"] = "geh"
+app.config["JWT_SECRET_KEY"] = "private"
 jwt = JWTManager(app)
 CORS(app)
